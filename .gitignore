@@ -35,3 +35,7 @@ proguard/
 
 # Stupid MAC OSX files
 .DS_Store
+
+core/gen-external-apklibs
+zxing/zxing/target
+core/target

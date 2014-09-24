@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2014 Kloudtek Ltd
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>barcodescanner</artifactId>
+        <groupId>me.dm7.barcodescanner</groupId>
+        <version>1.5</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>aar</packaging>
+
+    <artifactId>zxing</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>me.dm7.barcodescanner</groupId>
+            <artifactId>core</artifactId>
+            <version>1.5</version>
+            <type>aar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <configuration>
+                    <sdk>
+                        <platform>15</platform>
+                    </sdk>
+                    <resourceDirectory>src/main/res</resourceDirectory>
+                    <androidManifestFile>src/main/AndroidManifest.xml</androidManifestFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

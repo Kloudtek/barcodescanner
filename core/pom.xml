@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>barcodescanner</artifactId>
+        <groupId>me.dm7.barcodescanner</groupId>
+        <version>1.5</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>core</artifactId>
+    <packaging>aar</packaging>
+    <name>core</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <platform.version>4.1.1.4</platform.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.android.support</groupId>
+            <artifactId>support-v4</artifactId>
+            <version>20.0.0</version>
+            <type>aar</type>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <configuration>
+                    <sdk>
+                        <platform>15</platform>
+                    </sdk>
+                    <resourceDirectory>src/main/res</resourceDirectory>
+                    <androidManifestFile>src/main/AndroidManifest.xml</androidManifestFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
